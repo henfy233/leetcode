@@ -51,6 +51,8 @@ class Solution(object):
         #     pre = max(num, pre+num)
         #     maxAns = max(maxAns, pre)
         # return maxAns
+
+        # 2.1
         n = len(nums)
         for i in range(1, n):
             # nums[i] = max(nums[i-1]+nums[i], nums[i])
@@ -58,3 +60,22 @@ class Solution(object):
                 nums[i] += nums[i-1]
         return max(nums)
 # @lc code=end
+
+
+if __name__ == '__main__':
+    s = Solution()
+    test_list = [
+        ([-2, 1, -3, 4, -1, 2, 1, -5, 4], 6),
+        ([1], 1),
+        ([0], 0),
+        ([-1], -1),
+        ([-100000], -100000),
+    ]
+
+    for test_index, test_case in enumerate(test_list, start=1):
+        *test, result = test_case
+        test_result = s.maxSubArray(*test)
+        if test_result != result:
+            raise ValueError("\n testcase %d error:\n expect: %s \n actually %s" % (
+                test_index, result, test_result))
+        print("test_case %d succeed." % test_index)

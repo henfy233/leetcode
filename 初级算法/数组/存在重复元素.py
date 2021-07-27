@@ -1,3 +1,18 @@
+#!/usr/bin/env python
+# -*- encoding: utf-8 -*-
+'''
+@File    :   存在重复元素.py
+@Time    :   2021/07/24 11:19:45
+@Author  :   henfy
+@Version :   1.0
+'''
+
+# here put the import lib
+
+
+from typing import List
+
+
 class Solution(object):
     def containsDuplicate(self, nums):
         """
@@ -26,3 +41,20 @@ class Solution(object):
         if len(nums) != len(set(nums)):
             return True
         return False
+
+
+if __name__ == '__main__':
+    s = Solution()
+    test_list = [
+        ([1, 2, 3, 1], True),
+        ([1, 2, 3, 4], False),
+        ([1, 1, 1, 3, 3, 4, 3, 2, 4, 2], True)
+    ]
+
+    for test_index, test_case in enumerate(test_list, start=1):
+        *test, result = test_case
+        test_result = s.containsDuplicate(*test)
+        if test_result != result:
+            raise ValueError("\n testcase %d error:\n expect: %s \n actually %s" % (
+                test_index, result, test_result))
+        print("test_case %d succeed." % test_index)

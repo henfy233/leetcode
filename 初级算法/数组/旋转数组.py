@@ -41,6 +41,7 @@ class Solution(object):
         reverse(nums, 0, n - 1)
         return nums
 
+        # python数组优点
         # k %= len(nums)
         # nums[:] = nums[-k:]+nums[:-k]
         # return nums

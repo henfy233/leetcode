@@ -36,3 +36,8 @@
 # nums = [3, 2, 1, 5, 6, 4]
 # nums = [3, 2, 3, 1, 2, 4, 5, 5, 6]
 # print(findKthLargest(nums, 4))
+
+
+# if __name__ == '__main__':
+#     d = {'a': 1, 'b': 2}
+#     print(d.has_key('a'))
