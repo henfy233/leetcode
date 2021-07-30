@@ -16,28 +16,43 @@ class Solution(object):
         :type nums: List[int]
         :rtype: None Do not return anything, modify nums in-place instead.
         """
-        # 自己做错
-        # print(nums)
+        # 运行慢，省空间
         # n = len(nums)
-        # i = 0
-        # while nums[i] == 0:
-        #     i += 1
-        # nums = nums[-(n-i):] + [0]*i
+        # num = 0
+        # for i in range(n):
+        #     while nums[i] == 0 and n-num > i:
+        #         num += 1
+        #         nums.pop(i)
+        #         nums.append(0)
         # return nums
 
-        # 双指针
+        # 把非0的往前挪
         n = len(nums)
-        left = 0
-        right = n-1
-        while nums[left] == 0:
-            left += 1
+        index = 0
+        for i in range(n):
+            if nums[i] != 0:
+                # nums[index], nums[i] = nums[i], nums[index]
+                nums[index] = nums[i]
+                index += 1
+        while index < n:
+            nums[index] = 0
+            index += 1
+        return nums
+
+        # 双指针
+        # n = len(nums)
+        # left = 0
+        # right = n-1
+        # while nums[left] == 0:
+        #     left += 1
 
 
 if __name__ == '__main__':
     s = Solution()
     test_list = [
         ([0, 1, 0, 3, 12], [1, 3, 12, 0, 0]),
-        ([0, 1, 0, 3, 12], [1, 3, 12, 0, 0]),
+        ([1, 0, 0, 0, 3, 12, 0], [1, 3, 12, 0, 0, 0, 0]),
+        ([1, 0, 0, 0, 3, 12], [1, 3, 12, 0, 0, 0]),
     ]
 
     for test_index, test_case in enumerate(test_list, start=1):
