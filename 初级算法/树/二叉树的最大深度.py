@@ -16,11 +16,15 @@ class Solution(object):
         :type root: TreeNode
         :rtype: int
         """
-        if not root:
-            return 0
-        left = self.maxDepth(root.left)
-        right = self.maxDepth(root.right)
-        return max(left, right) + 1
+        # 遇到树的问题，可以无脑优先考虑递归的方式
+        # if not root:
+        #     return 0
+        # left = self.maxDepth(root.left)
+        # right = self.maxDepth(root.right)
+        # return max(left, right) + 1
+
+        # 同上不同的写法
+        return 0 if not root else max(self.maxDepth(root.left), self.maxDepth(root.right))+1
 
         # 自己写 数组元素用全局
         # maxDepth = [0]
@@ -35,9 +39,6 @@ class Solution(object):
         #     dfs(node.right, depth+1)
         # dfs(root, 1)
         # return maxDepth[0]
-
-        # python 1行代码
-        # return 0 if not root else max(self.maxDepth(root.left), self.maxDepth(root.right))+1
 
 
 if __name__ == '__main__':

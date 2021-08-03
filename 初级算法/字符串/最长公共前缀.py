@@ -20,16 +20,15 @@ class Solution(object):
         # # s = ""
         # for s in strs:
         #     for i in s
+
+        # 没去想，这是用别人的想法的
         if len(strs) == 0:
             return ""
         pre = strs[0]
         strs = strs[1:]
         for i in range(len(strs)):
             count = 0
-            if len(pre) < len(strs[i]):
-                length = len(pre)
-            else:
-                length = len(strs[i])
+            length = min(len(pre), len(strs[i]))
             for j in range(length):
                 if strs[i][j] == pre[j]:
                     count += 1

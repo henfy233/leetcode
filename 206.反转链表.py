@@ -21,7 +21,7 @@ class Solution(object):
         :type head: ListNode
         :rtype: ListNode
         """
-        # 方法一：迭代
+        # 1. 迭代 将指针顺序弄反
         # pre = None
         # tail = head
         # while tail:
@@ -32,7 +32,7 @@ class Solution(object):
         #     head = tail
         # return pre
 
-        # 方法二：递归
+        # 2. 递归 难写
         if head == None or head.next == None:
             return head
         newHead = self.reverseList(head.next)
