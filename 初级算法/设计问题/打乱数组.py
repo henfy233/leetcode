@@ -8,14 +8,17 @@
 '''
 
 # here put the import lib
+import random
 
 
+# 没做过这种类型的题目，还是直接看答案吧
 class Solution(object):
     # 使用整数数组 nums 初始化对象
     def __init__(self, nums):
         """
         :type nums: List[int]
         """
+        self.nums = nums
 
     # 重设数组到它的初始状态并返回
     def reset(self):
@@ -23,6 +26,7 @@ class Solution(object):
         Resets the array to its original configuration and return it.
         :rtype: List[int]
         """
+        return self.nums
 
     # 返回数组随机打乱后的结果
     def shuffle(self):
@@ -30,6 +34,12 @@ class Solution(object):
         Returns a random shuffling of the array.
         :rtype: List[int]
         """
+        # 调用API
+        copy = self.nums[:]
+        random.shuffle(copy)
+        return copy
+    # 执行用时：304 ms, 在所有 Python 提交中击败了94.74 % 的用户
+    # 内存消耗：18.7 MB, 在所有 Python 提交中击败了58.48 % 的用户
 
 
 # Your Solution object will be instantiated and called as such:
