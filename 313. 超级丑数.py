@@ -4,7 +4,7 @@
 @File    :   313. 超级丑数.py
 @Time    :   2021/08/09 10:49:47
 @Author  :   henfy
-@Diffi   :   easy
+@Diffi   :   middle
 @Version :   1.0
 '''
 

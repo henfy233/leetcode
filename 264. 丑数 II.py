@@ -4,7 +4,7 @@
 @File    :   264. 丑数 II.py
 @Time    :   2021/08/09 11:20:52
 @Author  :   henfy
-@Diffi   :   easy
+@Diffi   :   middle
 @Version :   1.0
 
 给你一个整数 n ，请你找出并返回第 n 个 丑数 。
