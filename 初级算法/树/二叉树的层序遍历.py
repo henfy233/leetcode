@@ -56,7 +56,7 @@ class Solution(object):
             length = len(queue)
             # subList存储的是每层的结点值
             subList = []
-            for i in range(length):
+            for _ in range(length):
                 # 出队
                 node = queue.pop(0)
                 subList.append(node.val)
