@@ -1,20 +1,21 @@
-#!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 '''
 @File    :   743. 网络延迟时间.py
 @Time    :   2021/08/02 00:11:21
 @Author  :   henfy
+@Diffi   :   Medium
 @Version :   1.0
-'''
 
-# here put the import lib
+题目：https://leetcode-cn.com/problems/network-delay-time/
+'''
 import heapq
+from typing import List
 
 
 # 错题,没有思路
 # 五种最短路径 两种存图方式
 class Solution(object):
-    def networkDelayTime(self, times, n, k):
+    def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
         """
         :type times: List[List[int]]
         :type n: int
