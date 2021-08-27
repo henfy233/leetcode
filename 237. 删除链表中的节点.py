@@ -1,15 +1,13 @@
-#!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 '''
-@File    :   删除链表中的节点.py
+@File    :   237. 删除链表中的节点.py
 @Time    :   2021/07/31 20:44:29
 @Author  :   henfy
+@Diffi   :   Easy
 @Version :   1.0
+
+题目：https://leetcode-cn.com/problems/delete-node-in-a-linked-list/
 '''
-
-# here put the import lib
-
-# Definition for singly-linked list.
 
 
 class ListNode(object):
@@ -41,19 +39,3 @@ class Solution(object):
         node.val = node.next.val
         node.next = node.next.next
         return node
-
-
-if __name__ == '__main__':
-    s = Solution()
-    test_list = [
-        ([4, 5, 1, 9], 5, [4, 1, 9]),
-    ]
-
-    for test_index, test_case in enumerate(test_list, start=1):
-        *test, result = test_case
-        l = s.insert(*test)
-        test_result = s.deleteNode(l)
-        if test_result != result:
-            raise ValueError("\n testcase %d error:\n expect: %s \n actually %s" % (
-                test_index, result, test_result))
-        print("test_case %d succeed." % test_index)

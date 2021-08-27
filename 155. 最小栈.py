@@ -1,16 +1,15 @@
-#!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 '''
-@File    :   最小栈.py
+@File    :   155. 最小栈.py
 @Time    :   2021/08/04 16:08:35
 @Author  :   henfy
+@Diffi   :   Easy
 @Version :   1.0
+
+题目：https://leetcode-cn.com/problems/min-stack/
 '''
 
-# here put the import lib
 
-
-# 设计一个支持 push ，pop ，top 操作，并能在常数时间内检索到最小元素的栈。
 class MinStack(object):
     nums = []
 

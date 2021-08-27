@@ -1,15 +1,13 @@
-#!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 '''
-@File    :   合并两个有序链表.py
+@File    :   21. 合并两个有序链表.py
 @Time    :   2021/08/03 20:19:08
 @Author  :   henfy
+@Diffi   :   Easy
 @Version :   1.0
+
+题目：https://leetcode-cn.com/problems/merge-two-sorted-lists/submissions/
 '''
-
-# here put the import lib
-
-# Definition for singly-linked list.
 
 
 class ListNode(object):
@@ -19,12 +17,7 @@ class ListNode(object):
 
 
 class Solution(object):
-    def mergeTwoLists(self, l1, l2):
-        """
-        :type l1: ListNode
-        :type l2: ListNode
-        :rtype: ListNode
-        """
+    def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
         # 自己做 链表连接处不会相连 有疑惑
         # l = head = ListNode()
         # while l1 or l2:
@@ -82,18 +75,3 @@ class Solution(object):
         #     return l2
         # 执行用时：24 ms, 在所有 Python 提交中击败了69.82 % 的用户
         # 内存消耗：12.9 MB, 在所有 Python 提交中击败了87.30 % 的用户
-
-
-if __name__ == '__main__':
-    s = Solution()
-    test_list = [
-        (),
-    ]
-
-    for test_index, test_case in enumerate(test_list, start=1):
-        *test, result = test_case
-        test_result = s.mergeTwoLists(*test)
-        if test_result != result:
-            raise ValueError("\n testcase %d error:\n expect: %s \n actually %s" % (
-                test_index, result, test_result))
-        print("test_case %d succeed." % test_index)

@@ -1,20 +1,21 @@
-#
-# @lc app=leetcode.cn id=1713 lang=python
-#
-# [1713] 得到子序列的最少操作次数
-#
+# -*- encoding: utf-8 -*-
+'''
+@File    :   1713.得到子序列的最少操作次数.py
+@Time    :   2021/07/26 02:16:27
+@Author  :   henfy
+@Diffi   :   Hard
+@Version :   1.0
+
+题目：https://leetcode-cn.com/problems/minimum-operations-to-make-a-subsequence/
+'''
 import bisect
-# @lc code=start
+from typing import List
 
 
 class Solution(object):
-    def minOperations(self, target, arr):
-        """
-        :type target: List[int]
-        :type arr: List[int]
-        :rtype: int
-        """
-        # 贪心 + 二分查找
+    def minOperations(self, target: List[int], arr: List[int]) -> int:
+        # 1. 贪心 + 二分查找
+        # https://leetcode-cn.com/problems/minimum-operations-to-make-a-subsequence/solution/de-dao-zi-xu-lie-de-zui-shao-cao-zuo-ci-hefgl/
         pos = dict()
         n = len(target)
         for i in range(n):
@@ -29,6 +30,9 @@ class Solution(object):
                 else:
                     d.append(idx)
         return n - len(d)
+        # 复杂度分析
+        # 时间复杂度：O(n+mlogm)，其中 n 是数组 target 的长度，m 是数组 arr 的长度。遍历 target 需要 O(n) 的时间，求 arr′的最长递增子序列需要 O(mlogm) 的时间。
+        # 空间复杂度：O(n+m)。需要 O(n) 大小的哈希表存储 target 的元素的下标，以及 O(m) 的空间求最长递增子序列。
 
         # 简洁写法
         # pos = {val: i for i, val in enumerate(target)}
@@ -41,7 +45,6 @@ class Solution(object):
         #         else:
         #             dp[bisect.bisect_left(dp, idx)] = idx
         # return len(target) - len(dp)
-# @lc code=end
 
 
 if __name__ == '__main__':

@@ -1,23 +1,13 @@
-#!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 '''
 @File    :   541. 反转字符串 II.PY
 @Time    :   2021/08/20 01:43:26
 @Author  :   henfy
-@Diffi   :   easy
+@Diffi   :   Easy
 @Version :   1.0
 
-给定一个字符串 s 和一个整数 k，从字符串开头算起，每 2k 个字符反转前 k 个字符。
-
- - 如果剩余字符少于 k 个，则将剩余字符全部反转。
- - 如果剩余字符小于 2k 但大于或等于 k 个，则反转前 k 个字符，其余字符保持原样。
-
-来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/reverse-string-ii
-著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 '''
-
-# here put the import lib
 
 
 class Solution:
@@ -25,14 +15,12 @@ class Solution:
         # 自己写，这题还是简单的
         # s = list(s)
         # n = len(s)
-
         # def reverse(s: list, l: int, r: int) -> list:
         #     while l < r:
         #         s[l], s[r] = s[r], s[l]
         #         l += 1
         #         r -= 1
         #     return s
-
         # head = 0
         # while head < n:
         #     if n - head >= k:

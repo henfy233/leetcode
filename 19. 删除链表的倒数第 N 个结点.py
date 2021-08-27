@@ -1,16 +1,15 @@
-#!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 '''
-@File    :   删除链表的倒数第N个节点.py
+@File    :   19. 删除链表的倒数第 N 个结点.py
 @Time    :   2021/08/03 15:02:58
 @Author  :   henfy
+@Diffi   :   Medium
 @Version :   1.0
+
+题目：https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/
 '''
 
-# here put the import lib
 
-
-# Definition for singly-linked list.
 class ListNode(object):
     def __init__(self, val=0, next=None):
         self.val = val

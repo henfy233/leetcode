@@ -1,19 +1,21 @@
-#
-# @lc app=leetcode.cn id=1818 lang=python
-#
-# [1818] 绝对差值和
-#
+# -*- encoding: utf-8 -*-
+'''
+@File    :   1818.绝对差值和.py
+@Time    :   2021/07/14 02:28:47
+@Author  :   henfy
+@Diffi   :   Medium
+@Version :   1.0
+
+题目：https://leetcode-cn.com/problems/minimum-absolute-sum-difference/
+'''
 import bisect
-# @lc code=start
+from typing import List
+
+
 class Solution(object):
-    def minAbsoluteSumDiff(self, nums1, nums2):
-        """
-        :type nums1: List[int]
-        :type nums2: List[int]
-        :rtype: int
-        """
-# [20000008,7,5]\n[2,3,5]
-# [2,3,5]\n[2,3,5]
+    def minAbsoluteSumDiff(self, nums1: List[int], nums2: List[int]) -> int:
+        # 1. 排序 + 二分查找
+        # https://leetcode-cn.com/problems/minimum-absolute-sum-difference/solution/jue-dui-chai-zhi-he-by-leetcode-solution-gv78/
         n = len(nums1)
         total = 0
         ans = float("inf")
@@ -29,6 +31,9 @@ class Solution(object):
             if idx < n:
                 ans = min(ans, abs(sl[idx] - nums2[i]) - diff)
         return (total + ans) % (10 ** 9 + 7) if total else total
+        # 复杂度分析
+        # 时间复杂度：O(nlogn)，其中 n 是数组 nums_1和 nums_2的长度。我们需要记录 nums_1​中的元素，并进行排序，时间复杂度是 O(nlogn)。计算 maxn 需要进行 n 次二分查找，每次二分查找的时间为 O(logn)，因此时间复杂度也是 O(nlogn)。所以总的时间复杂度为 O(nlogn)。
+        # 空间复杂度：O(n)，其中 n 是数组 nums_1和 nums_2的长度。我们需要创建大小为 n 的辅助数组。
 
         # sum = 0
         # list = []
@@ -56,5 +61,17 @@ class Solution(object):
         # return sum
 
 
-# @lc code=end
+if __name__ == '__main__':
+    s = Solution()
+    test_list = [
+        ([1, 7, 5], [2, 3, 5], 3),
+        ([2, 4, 6, 8, 10], [2, 4, 6, 8, 10], 0),
+    ]
 
+    for test_index, test_case in enumerate(test_list, start=1):
+        *test, result = test_case
+        test_result = s.minAbsoluteSumDiff(*test)
+        if test_result != result:
+            raise ValueError("\n testcase %d error:\n expect: %s \n actually %s" % (
+                test_index, result, test_result))
+        print("test_case %d succeed." % test_index)

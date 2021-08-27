@@ -1,17 +1,22 @@
-#
-# @lc app=leetcode.cn id=1736 lang=python
-#
-# [1736] 替换隐藏数字得到的最晚时间
-#
+# -*- encoding: utf-8 -*-
+'''
+@File    :   1736.替换隐藏数字得到的最晚时间.py
+@Time    :   2021/07/24 02:21:35
+@Author  :   henfy
+@Diffi   :   Easy
+@Version :   1.0
 
-# @lc code=start
+题目：https://leetcode-cn.com/problems/latest-time-by-replacing-hidden-digits/
+'''
+
+
 class Solution(object):
     def maximumTime(self, time):
         """
         :type time: str
         :rtype: str
         """
-        # 贪心 + 状态机
+        # 1. 贪心 + 状态机
         # str = ''
         # if time[0] == '?':
         #     str += '1' if ('4' <= time[1] and time[1] <= '9') else '2'
@@ -41,6 +46,7 @@ class Solution(object):
         # sb.append('9' if time[4] == '?' else time[4])
         # return ''.join(sb)
 
+        # 2. 贪心
         time = list(time)
         if time[0] == '?':
             time[0] = '2' if time[1] in ('0', '1', '2', '3', '?') else '1'
@@ -51,14 +57,17 @@ class Solution(object):
         if time[4] == '?':
             time[4] = '9'
         return "".join(time)
-
-# @lc code=end
+        # 复杂度分析
+        # 时间复杂度：O(1)。
+        # 空间复杂度：O(1)。
 
 
 if __name__ == '__main__':
     s = Solution()
     test_list = [
         ("2?:?0", "23:50"),
+        ("0?:3?", "09:39"),
+        ("1?:22", "19:22"),
     ]
 
     for test_index, test_case in enumerate(test_list, start=1):
