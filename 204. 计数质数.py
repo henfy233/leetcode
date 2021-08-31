@@ -1,22 +1,19 @@
-#!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 '''
-@File    :   计数质数.py
+@File    :   204. 计数质数.py
 @Time    :   2021/08/03 23:12:08
 @Author  :   henfy
+@Diffi   :   Easy
 @Version :   1.0
+
+题目：https://leetcode-cn.com/problems/count-primes/
 '''
 
-# here put the import lib
-
-
 # 难题，之前做过，现在一脸懵逼
-class Solution(object):
-    def countPrimes(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
+
+
+class Solution:
+    def countPrimes(self, n: int) -> int:
         # 1. 使用标准的 埃拉托斯特尼 埃氏筛选法
         isNumPrimes = [True] * n  # 将所有数，展开所有数 标记质数真
         count = 0  # 质数计数器 因为1不是质数 所以 0

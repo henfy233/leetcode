@@ -1,21 +1,17 @@
-#!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 '''
-@File    :   整数反转.py
+@File    :   7. 整数反转.py
 @Time    :   2021/07/28 18:16:38
 @Author  :   henfy
+@Diffi   :   Easy
 @Version :   1.0
+
+题目：https://leetcode-cn.com/problems/reverse-integer/
 '''
 
-# here put the import lib
 
-
-class Solution(object):
-    def reverse(self, x):
-        """
-        :type x: int
-        :rtype: int
-        """
+class Solution:
+    def reverse(self, x: int) -> int:
         # 正负符号 不能超过32位 除10余数
         s = 0
         flag = True

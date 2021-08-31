@@ -15,6 +15,32 @@ from typing import List
 
 class Solution:
     def generate(self, numRows: int) -> List[List[int]]:
+        # 自己写，还算简单
+        # ans = [[1]*i for i in range(1, numRows+1)]
+        # for i in range(2, numRows):
+        #     for j in range(1, len(ans[i])-1):
+        #         ans[i][j] = ans[i-1][j-1] + ans[i-1][j]
+        # return ans
+        # 执行用时：32 ms, 在所有 Python3 提交中击败了70.74 % 的用户
+        # 内存消耗：14.8 MB, 在所有 Python3 提交中击败了93.53 % 的用户
+
+        # 1. 数学
+        # https://leetcode-cn.com/problems/pascals-triangle/solution/yang-hui-san-jiao-by-leetcode-solution-lew9/
+        ret = list()
+        for i in range(numRows):
+            row = list()
+            for j in range(0, i + 1):
+                if j == 0 or j == i:
+                    row.append(1)
+                else:
+                    row.append(ret[i - 1][j] + ret[i - 1][j - 1])
+            ret.append(row)
+        return ret
+        # 复杂度分析
+        # 时间复杂度：O(numRows ^ 2)。
+        # 空间复杂度：O(1)。不考虑返回值的空间占用。
+        # 执行用时：28 ms, 在所有 Python3 提交中击败了88.49 % 的用户
+        # 内存消耗：14.9 MB, 在所有 Python3 提交中击败了57.79 % 的用户
 
 
 if __name__ == '__main__':

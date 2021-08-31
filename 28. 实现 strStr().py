@@ -1,22 +1,17 @@
-#!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 '''
-@File    :   实现 strStr().py
+@File    :   28. 实现 strStr().py
 @Time    :   2021/07/29 20:08:24
 @Author  :   henfy
+@Diffi   :   Easy
 @Version :   1.0
+
+题目：https://leetcode-cn.com/problems/implement-strstr/
 '''
 
-# here put the import lib
 
-
-class Solution(object):
-    def strStr(self, haystack, needle):
-        """
-        :type haystack: str
-        :type needle: str
-        :rtype: int
-        """
+class Solution:
+    def strStr(self, haystack: str, needle: str) -> int:
         # 自己写，第四个样例过不去
         # left = 0
         # startAt = 0

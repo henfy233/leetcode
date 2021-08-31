@@ -1,21 +1,17 @@
-#!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 '''
-@File    :   字符串中的第一个唯一字符.py
+@File    :   387. 字符串中的第一个唯一字符.py
 @Time    :   2021/07/28 23:02:33
 @Author  :   henfy
+@Diffi   :   Easy
 @Version :   1.0
+
+题目：https://leetcode-cn.com/problems/first-unique-character-in-a-string/
 '''
 
-# here put the import lib
 
-
-class Solution(object):
-    def firstUniqChar(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
+class Solution:
+    def firstUniqChar(self, s: str) -> int:
         d = {}
         minAns = float("inf")
         for i, x in enumerate(s):

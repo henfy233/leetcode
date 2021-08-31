@@ -1,21 +1,17 @@
-#!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 '''
-@File    :   外观数列.py
+@File    :   38. 外观数列.py
 @Time    :   2021/07/29 23:21:41
 @Author  :   henfy
+@Diffi   :   Medium
 @Version :   1.0
+
+题目：https://leetcode-cn.com/problems/count-and-say/
 '''
 
-# here put the import lib
 
-
-class Solution(object):
-    def countAndSay(self, n):
-        """
-        :type n: int
-        :rtype: str
-        """
+class Solution:
+    def countAndSay(self, n: int) -> str:
         # 不会做，觉得很麻烦
         if n == 1:
             return '1'

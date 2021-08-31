@@ -1,22 +1,17 @@
-#!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 '''
-@File    :   有效的字母异位词.py
+@File    :   242. 有效的字母异位词.py
 @Time    :   2021/07/28 23:59:05
 @Author  :   henfy
+@Diffi   :   Easy
 @Version :   1.0
+
+题目：https://leetcode-cn.com/problems/valid-anagram/
 '''
 
-# here put the import lib
 
-
-class Solution(object):
-    def isAnagram(self, s, t):
-        """
-        :type s: str
-        :type t: str
-        :rtype: bool
-        """
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
         ds = {}
         # 遍历s全部存进哈希表，相同的加一
         for i in s:

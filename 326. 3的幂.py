@@ -1,24 +1,20 @@
-#!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 '''
-@File    :   3的幂.py
+@File    :   326. 3的幂.py
 @Time    :   2021/08/03 23:55:00
 @Author  :   henfy
+@Diffi   :   Easy
 @Version :   1.0
+
+题目：https://leetcode-cn.com/problems/power-of-three/
 '''
-
-# here put the import lib
-
-
 # 进阶：你能不使用循环或者递归来完成本题吗？
 
 # 5/3在leetcode中为整数，在这里为浮点数，有问题
-class Solution(object):
-    def isPowerOfThree(self, n):
-        """
-        :type n: int
-        :rtype: bool
-        """
+
+
+class Solution:
+    def isPowerOfThree(self, n: int) -> bool:
         # 1. 一直除以3 我用的是这种方法，但有点问题
         # if n > 1:
         #     while n % 3 == 0:

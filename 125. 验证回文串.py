@@ -1,21 +1,17 @@
-#!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 '''
-@File    :   验证回文串.py
-@Time    :   2021/07/29 12:41:58
+@File    :   125. 验证回文串.py
+@Time    :   2021/08/31 23:20:58
 @Author  :   henfy
+@Diffi   :   Easy
 @Version :   1.0
+
+题目：https://leetcode-cn.com/problems/valid-palindrome/
 '''
 
-# here put the import lib
 
-
-class Solution(object):
-    def isPalindrome(self, s):
-        """
-        :type s: str
-        :rtype: bool
-        """
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
         # n = len(s)
         # left = 0
         # right = n-1

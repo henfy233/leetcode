@@ -1,22 +1,18 @@
-#!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 '''
-@File    :   字符串转换整数 (atoi).py
+@File    :   8. 字符串转换整数 (atoi).py
 @Time    :   2021/07/29 13:39:37
 @Author  :   henfy
+@Diffi   :   Easy
 @Version :   1.0
-'''
 
-# here put the import lib
+题目：https://leetcode-cn.com/problems/string-to-integer-atoi/
+'''
 import re
 
 
-class Solution(object):
-    def myAtoi(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
+class Solution:
+    def myAtoi(self, s: str) -> int:
         w = 0
         n = len(s)
         sign = True

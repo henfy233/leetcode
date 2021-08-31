@@ -1,21 +1,20 @@
-#!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 '''
-@File    :   最长公共前缀.py
+@File    :   14. 最长公共前缀.py
 @Time    :   2021/07/29 23:52:33
 @Author  :   henfy
+@Diffi   :   Easy
 @Version :   1.0
+
+题目：https://leetcode-cn.com/problems/longest-common-prefix/
 '''
 
-# here put the import lib
+
+from typing import List
 
 
-class Solution(object):
-    def longestCommonPrefix(self, strs):
-        """
-        :type strs: List[str]
-        :rtype: str
-        """
+class Solution:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
         # ns = len(strs)
         # # s = ""
         # for s in strs:

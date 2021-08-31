@@ -1,21 +1,20 @@
-#!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 '''
-@File    :   Fizz Buzz.py
+@File    :   412. Fizz Buzz.py
 @Time    :   2021/08/03 23:01:06
 @Author  :   henfy
+@Diffi   :   Easy
 @Version :   1.0
+
+题目：https://leetcode-cn.com/problems/fizz-buzz/
 '''
 
-# here put the import lib
+
+from typing import List
 
 
-class Solution(object):
-    def fizzBuzz(self, n):
-        """
-        :type n: int
-        :rtype: List[str]
-        """
+class Solution:
+    def fizzBuzz(self, n: int) -> List[str]:
         ans = []
         for i in range(1, n+1):
             if i % 15 == 0:

@@ -1,21 +1,17 @@
-#!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 '''
-@File    :   罗马数字转整数.py
+@File    :   13. 罗马数字转整数.py
 @Time    :   2021/08/04 14:54:58
 @Author  :   henfy
+@Diffi   :   Easy
 @Version :   1.0
+
+题目：https://leetcode-cn.com/problems/roman-to-integer/
 '''
 
-# here put the import lib
 
-
-class Solution(object):
-    def romanToInt(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
+class Solution:
+    def romanToInt(self, s: str) -> int:
         # 自己想，多重判断
         # sum = 0
         # n = len(s)
@@ -78,10 +74,10 @@ class Solution(object):
 if __name__ == '__main__':
     s = Solution()
     test_list = [
-        # ("III", 3),
-        # ("IV", 4),
-        # ("IX", 9),
-        # ("LVIII", 58),
+        ("III", 3),
+        ("IV", 4),
+        ("IX", 9),
+        ("LVIII", 58),
         ("MCMXCIV", 1994),
     ]
 
