@@ -1,10 +1,22 @@
-# https: // leetcode-cn.com/leetbook/read/top-interview-questions-easy/x2skh7/
-class Solution(object):
-    def rotate(self, nums, k):
+# -*- encoding: utf-8 -*-
+'''
+@File    :   189. 旋转数组.py
+@Time    :   2021/09/01 01:07:20
+@Author  :   henfy
+@Diffi   :   Medium
+@Version :   1.0
+
+题目：https://leetcode-cn.com/problems/rotate-array/
+'''
+
+
+from typing import List
+
+
+class Solution:
+    def rotate(self, nums: List[int], k: int) -> None:
         """
-        :type nums: List[int]
-        :type k: int
-        :rtype: None Do not return anything, modify nums in-place instead.
+        Do not return anything, modify nums in-place instead.
         """
         # n = len(nums)
         # for i in range(1, n+1):
@@ -45,3 +57,19 @@ class Solution(object):
         # k %= len(nums)
         # nums[:] = nums[-k:]+nums[:-k]
         # return nums
+
+
+if __name__ == '__main__':
+    s = Solution()
+    test_list = [
+        ([1, 2, 3, 4, 5, 6, 7], 3, [5, 6, 7, 1, 2, 3, 4]),
+        ([-1, -100, 3, 99], 2, [3, 99, -1, -100]),
+    ]
+
+    for test_index, test_case in enumerate(test_list, start=1):
+        *test, result = test_case
+        test_result = s.rotate(*test)
+        if test_result != result:
+            raise ValueError("\n testcase %d error:\n expect: %s \n actually %s" % (
+                test_index, result, test_result))
+        print("test_case %d succeed." % test_index)

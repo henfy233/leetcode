@@ -1,24 +1,20 @@
-#!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 '''
-@File    :   存在重复元素.py
+@File    :   217. 存在重复元素.py
 @Time    :   2021/07/24 11:19:45
 @Author  :   henfy
+@Diffi   :   Easy
 @Version :   1.0
-'''
 
-# here put the import lib
+题目：https://leetcode-cn.com/problems/contains-duplicate/
+'''
 
 
 from typing import List
 
 
-class Solution(object):
-    def containsDuplicate(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: bool
-        """
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
         # 哈希表
         # d = dict()
         # for i in range(len(nums)):

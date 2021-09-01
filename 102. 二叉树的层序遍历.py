@@ -1,28 +1,29 @@
-#!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 '''
-@File    :   二叉树的层序遍历.py
-@Time    :   2021/07/31 18:12:05
+@File    :   102. 二叉树的层序遍历.py
+@Time    :   2021/07/31 18:31:22
 @Author  :   henfy
+@Diffi   :   Medium
 @Version :   1.0
+
+题目：https://leetcode-cn.com/problems/binary-tree-level-order-traversal/
 '''
 
-# here put the import lib
-
 # Definition for a binary tree node.
-# class TreeNode(object):
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
 
 
-class Solution(object):
-    def levelOrder(self, root):
-        """
-        :type root: TreeNode
-        :rtype: List[List[int]]
-        """
+from typing import List
+
+
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+
+class Solution:
+    def levelOrder(self, root: TreeNode) -> List[List[int]]:
         # 1. DFS解决 自己做的
         # arr = []
 
@@ -70,18 +71,3 @@ class Solution(object):
         return res
         # 执行用时：20 ms, 在所有 Python 提交中击败了74.96 % 的用户
         # 内存消耗：13.1 MB, 在所有 Python 提交中击败了96.02 % 的用户
-
-
-if __name__ == '__main__':
-    s = Solution()
-    test_list = [
-        (),
-    ]
-
-    for test_index, test_case in enumerate(test_list, start=1):
-        *test, result = test_case
-        test_result = s.levelOrder(*test)
-        if test_result != result:
-            raise ValueError("\n testcase %d error:\n expect: %s \n actually %s" % (
-                test_index, result, test_result))
-        print("test_case %d succeed." % test_index)

@@ -1,21 +1,20 @@
-#!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 '''
-@File    :   删除排序数组中的重复项.py
-@Time    :   2021/07/27 23:57:37
+@File    :   26. 删除有序数组中的重复项.py
+@Time    :   2021/08/31 23:49:32
 @Author  :   henfy
+@Diffi   :   Easy
 @Version :   1.0
+
+题目：https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/
 '''
 
-# here put the import lib
+
+from typing import List
 
 
-class Solution(object):
-    def removeDuplicates(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
         # 双指针
         # n = len(nums)
         # i = 0

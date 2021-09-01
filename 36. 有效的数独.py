@@ -1,21 +1,20 @@
-#!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 '''
-@File    :   有效的数独.py
-@Time    :   2021/07/27 20:36:06
+@File    :   36. 有效的数独.py
+@Time    :   2021/09/01 01:12:30
 @Author  :   henfy
+@Diffi   :   Medium
 @Version :   1.0
+
+题目：https://leetcode-cn.com/problems/valid-sudoku/
 '''
 
-# here put the import lib
+
+from typing import List
 
 
-class Solution(object):
-    def isValidSudoku(self, board):
-        """
-        :type board: List[List[str]]
-        :rtype: bool
-        """
+class Solution:
+    def isValidSudoku(self, board: List[List[str]]) -> bool:
         # 直接判断
         # print(board)
         n = len(board)

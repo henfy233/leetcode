@@ -1,21 +1,20 @@
-#!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 '''
-@File    :   加一.py
-@Time    :   2021/07/24 22:40:52
+@File    :   66. 加一.py
+@Time    :   2021/08/31 23:44:58
 @Author  :   henfy
+@Diffi   :   Easy
 @Version :   1.0
+
+题目：https://leetcode-cn.com/problems/plus-one/
 '''
 
-# here put the import lib
+
+from typing import List
 
 
-class Solution(object):
-    def plusOne(self, digits):
-        """
-        :type digits: List[int]
-        :rtype: List[int]
-        """
+class Solution:
+    def plusOne(self, digits: List[int]) -> List[int]:
         # python数组优点
         n = len(digits)
         digits[n-1] += 1

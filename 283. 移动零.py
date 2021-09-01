@@ -1,20 +1,22 @@
-#!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 '''
-@File    :   移动零.py
-@Time    :   2021/07/24 23:23:33
+@File    :   283. 移动零.py
+@Time    :   2021/09/01 01:11:14
 @Author  :   henfy
+@Diffi   :   Easy
 @Version :   1.0
+
+题目：https://leetcode-cn.com/problems/move-zeroes/
 '''
 
-# here put the import lib
+
+from typing import List
 
 
-class Solution(object):
-    def moveZeroes(self, nums):
+class Solution:
+    def moveZeroes(self, nums: List[int]) -> None:
         """
-        :type nums: List[int]
-        :rtype: None Do not return anything, modify nums in-place instead.
+        Do not return anything, modify nums in-place instead.
         """
         # 运行慢，省空间
         # n = len(nums)

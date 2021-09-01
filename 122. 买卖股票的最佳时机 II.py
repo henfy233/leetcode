@@ -1,9 +1,20 @@
-class Solution(object):
-    def maxProfit(self, prices):
-        """
-        :type prices: List[int]
-        :rtype: int
-        """
+# -*- encoding: utf-8 -*-
+'''
+@File    :   122. 买卖股票的最佳时机 II.py
+@Time    :   2021/08/31 23:48:22
+@Author  :   henfy
+@Diffi   :   Medium
+@Version :   1.0
+
+题目：https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/
+'''
+
+
+from typing import List
+
+
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
         # 贪心算法解决
         res = 0
         n = len(prices)

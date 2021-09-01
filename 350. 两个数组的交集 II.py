@@ -1,22 +1,20 @@
-#!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 '''
-@File    :   两个数组的交集 II.py
-@Time    :   2021/07/24 11:28:01
+@File    :   350. 两个数组的交集 II.py
+@Time    :   2021/08/31 23:45:59
 @Author  :   henfy
+@Diffi   :   Easy
 @Version :   1.0
+
+题目：https://leetcode-cn.com/problems/intersection-of-two-arrays-ii/
 '''
 
-# here put the import lib
+
+from typing import List
 
 
-class Solution(object):
-    def intersect(self, nums1, nums2):
-        """
-        :type nums1: List[int]
-        :type nums2: List[int]
-        :rtype: List[int]
-        """
+class Solution:
+    def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
         # 数组进行排序
         # nums1.sort()
         # nums2.sort()

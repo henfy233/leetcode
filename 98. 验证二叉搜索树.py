@@ -1,28 +1,25 @@
-#!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 '''
-@File    :   验证二叉搜索树.py
+@File    :   98. 验证二叉搜索树.py
 @Time    :   2021/07/29 23:39:01
 @Author  :   henfy
+@Diffi   :   Medium
 @Version :   1.0
+
+题目：https://leetcode-cn.com/problems/validate-binary-search-tree/
 '''
 
-# here put the import lib
 
 # Definition for a binary tree node.
-# class TreeNode(object):
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
 
 
-class Solution(object):
-    def isValidBST(self, root):
-        """
-        :type root: TreeNode
-        :rtype: bool
-        """
+class Solution:
+    def isValidBST(self, root: TreeNode) -> bool:
         # 1. 递归+上下界
         # 递归并引入上界，下界来判断是否有效的二叉搜索树
         def dfs(root, left, right):
@@ -54,23 +51,3 @@ class Solution(object):
         #     prev = root
         #     root = root.right
         # return True
-
-
-if __name__ == '__main__':
-    s = Solution()
-    test_list = [
-        ([2, 1, 3], True),
-        ([5, 1, 4, None, None, 3, 6], False),
-        ([1], True),
-        ([2, 2, 2], False),
-        ([1, 1], False),
-        ([5, 4, 6, None, None, 3, 7], False),
-    ]
-
-    for test_index, test_case in enumerate(test_list, start=1):
-        *test, result = test_case
-        test_result = s.isValidBST(*test)
-        if test_result != result:
-            raise ValueError("\n testcase %d error:\n expect: %s \n actually %s" % (
-                test_index, result, test_result))
-        print("test_case %d succeed." % test_index)

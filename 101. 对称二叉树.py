@@ -1,29 +1,26 @@
-#!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 '''
-@File    :   对称二叉树.py
+@File    :   101. 对称二叉树.py
 @Time    :   2021/07/30 13:21:03
 @Author  :   henfy
+@Diffi   :   Easy
 @Version :   1.0
+
+题目：https://leetcode-cn.com/problems/symmetric-tree/
 '''
 
-# here put the import lib
-
 # Definition for a binary tree node.
-# class TreeNode(object):
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
 
 
-# 难题，还需重复做
-class Solution(object):
-    def isSymmetric(self, root):
-        """
-        :type root: TreeNode
-        :rtype: bool
-        """
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+
+class Solution:
+    def isSymmetric(self, root: TreeNode) -> bool:
         # 1. 递归  自己没有想法
         if not root:
             return True
@@ -78,18 +75,3 @@ class Solution(object):
         # return True
         # 执行用时：24 ms, 在所有 Python 提交中击败了60.00 % 的用户
         # 内存消耗：13.2 MB, 在所有 Python 提交中击败了61.17 % 的用户
-
-
-if __name__ == '__main__':
-    s = Solution()
-    test_list = [
-        (),
-    ]
-
-    for test_index, test_case in enumerate(test_list, start=1):
-        *test, result = test_case
-        test_result = s.isSymmetric(*test)
-        if test_result != result:
-            raise ValueError("\n testcase %d error:\n expect: %s \n actually %s" % (
-                test_index, result, test_result))
-        print("test_case %d succeed." % test_index)

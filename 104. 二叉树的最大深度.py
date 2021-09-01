@@ -1,21 +1,25 @@
-#!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 '''
-@File    :   二叉树的最大深度.py
+@File    :   104. 二叉树的最大深度.py
 @Time    :   2021/07/28 16:27:09
 @Author  :   henfy
+@Diffi   :   Easy
 @Version :   1.0
+
+题目：https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/
 '''
+# Definition for a binary tree node.
 
-# here put the import lib
+
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
 
 
-class Solution(object):
-    def maxDepth(self, root):
-        """
-        :type root: TreeNode
-        :rtype: int
-        """
+class Solution:
+    def maxDepth(self, root: TreeNode) -> int:
         # 遇到树的问题，可以无脑优先考虑递归的方式
         # if not root:
         #     return 0
@@ -39,18 +43,3 @@ class Solution(object):
         #     dfs(node.right, depth+1)
         # dfs(root, 1)
         # return maxDepth[0]
-
-
-if __name__ == '__main__':
-    s = Solution()
-    test_list = [
-        (),
-    ]
-
-    for test_index, test_case in enumerate(test_list, start=1):
-        *test, result = test_case
-        test_result = s.maxDepth(*test)
-        if test_result != result:
-            raise ValueError("\n testcase %d error:\n expect: %s \n actually %s" % (
-                test_index, result, test_result))
-        print("test_case %d succeed." % test_index)

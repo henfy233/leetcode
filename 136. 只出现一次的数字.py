@@ -1,21 +1,20 @@
-#!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 '''
-@File    :   只出现一次的数字.py
-@Time    :   2021/07/24 11:18:54
+@File    :   136. 只出现一次的数字.py
+@Time    :   2021/09/01 01:13:42
 @Author  :   henfy
+@Diffi   :   Easy
 @Version :   1.0
+
+题目：https://leetcode-cn.com/problems/single-number/
 '''
 
-# here put the import lib
+
+from typing import List
 
 
-class Solution(object):
-    def singleNumber(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
         # 字典dict解决
         # d = dict()
         # for i in range(len(nums)):

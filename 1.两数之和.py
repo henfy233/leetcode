@@ -12,6 +12,14 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
+        # print(nums)
+        d = dict()
+        n = len(nums)
+        for i in range(n):
+            if target - nums[i] in d:
+                return [d[target - nums[i]], i]
+            d[nums[i]] = i
+
         # 1.1 暴力破解
         # n = len(nums)
         # for i in range(n):
@@ -32,13 +40,12 @@ class Solution(object):
         #     return [j, i]
 
         # 2.哈希表 数组存储索引
-        hashmap = dict()
-        # hashmap = {}
-        for i, num in enumerate(nums):
-            if target - num in hashmap:
-                return [hashmap[target-num], i]
-            hashmap[num] = i
-# @lc code=end
+        # hashmap = dict()
+        # # hashmap = {}
+        # for i, num in enumerate(nums):
+        #     if target - num in hashmap:
+        #         return [hashmap[target-num], i]
+        #     hashmap[num] = i
 
 
 if __name__ == '__main__':

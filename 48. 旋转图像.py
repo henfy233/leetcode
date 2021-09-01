@@ -1,21 +1,21 @@
-#!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 '''
-@File    :   旋转图像.py
-@Time    :   2021/07/28 13:06:13
+@File    :   48. 旋转图像.py
+@Time    :   2021/09/01 01:09:37
 @Author  :   henfy
+@Diffi   :   Medium
 @Version :   1.0
+
+题目：https://leetcode-cn.com/problems/rotate-image/
 '''
-
-# here put the import lib
 import copy
+from typing import List
 
 
-class Solution(object):
-    def rotate(self, matrix):
+class Solution:
+    def rotate(self, matrix: List[List[int]]) -> None:
         """
-        :type matrix: List[List[int]]
-        :rtype: None Do not return anything, modify matrix in-place instead.
+        Do not return anything, modify matrix in-place instead.
         """
         # 1. 先上下交换，在对角线交换
         # n = len(matrix)
