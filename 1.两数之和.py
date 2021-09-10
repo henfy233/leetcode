@@ -1,17 +1,20 @@
-#
-# @lc app=leetcode.cn id=1 lang=python
-#
-# [1] 两数之和
-#
+# -*- encoding: utf-8 -*-
+'''
+@File    :   1.两数之和.py
+@Time    :   2021/07/27 22:31:43
+@Author  :   henfy
+@Diffi   :   Easy
+@Version :   1.0
 
-# @lc code=start
+题目：https://leetcode-cn.com/problems/two-sum/
+'''
+
+
+from typing import List
+
+
 class Solution(object):
-    def twoSum(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
-        """
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
         # print(nums)
         d = dict()
         n = len(nums)
@@ -21,6 +24,7 @@ class Solution(object):
             d[nums[i]] = i
 
         # 1.1 暴力破解
+        # https://leetcode-cn.com/problems/two-sum/solution/liang-shu-zhi-he-by-leetcode-solution/
         # n = len(nums)
         # for i in range(n):
         #     for j in range(i+1, n):

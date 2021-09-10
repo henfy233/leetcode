@@ -1,29 +1,17 @@
-#!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 '''
 @File    :   263. 丑数.py
 @Time    :   2021/08/09 10:58:59
 @Author  :   henfy
-@Diffi   :   easy
+@Diffi   :   Easy
 @Version :   1.0
 
-给你一个整数 n ，请你判断 n 是否为 丑数 。如果是，返回 true ；否则，返回 false 。
-丑数 就是只包含质因数 2、3 和/或 5 的正整数。
-
-来源：力扣（LeetCode）
-链接：https://leetcode-cn.com/problems/ugly-number
-著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+题目：https://leetcode-cn.com/problems/ugly-number
 '''
-
-# here put the import lib
 
 
 class Solution(object):
-    def isUgly(self, n):
-        """
-        :type n: int
-        :rtype: bool
-        """
+    def isUgly(self, n: int) -> bool:
         # 自己写，不太懂里面规则，看答案吧
         # if n == 1 or n == 2:
         #     return True

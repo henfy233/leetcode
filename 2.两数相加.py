@@ -1,11 +1,15 @@
-#
-# @lc app=leetcode.cn id=2 lang=python
-#
-# [2] 两数相加
-#
+# -*- encoding: utf-8 -*-
+'''
+@File    :   2.两数相加.py
+@Time    :   2021/04/18 22:33:06
+@Author  :   henfy
+@Diffi   :   Easy
+@Version :   1.0
 
-# @lc code=start
-# Definition for singly-linked list.
+题目：https://leetcode-cn.com/problems/add-two-numbers/
+'''
+
+
 class ListNode(object):
     def __init__(self, val=0, next=None):
         self.val = val
@@ -22,12 +26,7 @@ class ListNode(object):
 
 
 class Solution(object):
-    def addTwoNumbers(self, l1, l2):
-        """
-        :type l1: ListNode
-        :type l2: ListNode
-        :rtype: ListNode
-        """
+    def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
         head = None
         tail = None
         carry = 0
@@ -48,4 +47,3 @@ class Solution(object):
         if carry > 0:
             tail.next = ListNode(carry)
         return head
-# @lc code=end
