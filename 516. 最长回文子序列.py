@@ -1,37 +1,24 @@
-#!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 '''
 @File    :   516. 最长回文子序列.py
 @Time    :   2021/08/12 01:32:39
 @Author  :   henfy
-@Diffi   :   middle
+@Diffi   :   Medium
 @Version :   1.0
 
-给你一个字符串 s ，找出其中最长的回文子序列，并返回该序列的长度。
-
-子序列定义为：不改变剩余字符顺序的情况下，删除某些字符或者不删除任何字符形成的一个序列。
-符串 s ，找出其中最长的回文子序列，并返回该序列的长度。
-
-子序列定义为：不改变剩余字符顺序的情况下，删除某些字符或者不删除任何字符形成的一个序列。
-
-来源：力扣（LeetCode）
-链接：https: // leetcode-cn.com/problems/longest-palindromic-subsequence
-著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+链接：https://leetcode-cn.com/problems/longest-palindromic-subsequence
 '''
 # here put the import lib
 
 
 # 最近做题真是人傻了，都不会，这个我想到双指针，一头一尾，相同就下一个，可是怎么取舍
 class Solution(object):
-    def longestPalindromeSubseq(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
+    def longestPalindromeSubseq(self, s: str) -> int:
         # 1 动态规划
+        # https://leetcode-cn.com/problems/longest-palindromic-subsequence/solution/zui-chang-hui-wen-zi-xu-lie-by-leetcode-hcjqp/
         # 对于一个子序列而言，如果它是回文子序列，并且长度大于 2，那么将它首尾的两个字符去除之后，它仍然是个回文子序列。因此可以用动态规划的方法计算给定字符串的最长回文子序列。
         n = len(s)
-        # 用 dp[i][j] 表示字符串 ss 的下标范围[i, j] 内的最长回文子序列的长度。假设字符串 s 的长度为 n，则只有当 0≤i≤j < n 时，才会有 dp[i][j] > 0，否则 dp[i][j] = 0。
+        # 用 dp[i][j] 表示字符串 s 的下标范围[i, j] 内的最长回文子序列的长度。假设字符串 s 的长度为 n，则只有当 0 ≤ i ≤ j < n 时，才会有 dp[i][j] > 0，否则 dp[i][j] = 0。
         dp = [[0] * n for _ in range(n)]
         for i in range(n - 1, -1, -1):
             # 由于任何长度为 1 的子序列都是回文子序列，因此动态规划的边界情况是，对任意 0 ≤ i < n，都有 dp[i][i] = 1。
@@ -45,6 +32,7 @@ class Solution(object):
                 # - 如果 s[i] ≠ s[j]，则 s[i] 和 s[j]不可能同时作为同一个回文子序列的首尾，因此 dp[i][j] = max(dp[i+1][j], dp[i][j−1])。
                 else:
                     dp[i][j] = max(dp[i + 1][j], dp[i][j - 1])
+        print('dp', dp)
         # 最终得到 dp[0][n−1] 即为字符串 s 的最长回文子序列的长度。
         return dp[0][n - 1]
         # 复杂度分析
