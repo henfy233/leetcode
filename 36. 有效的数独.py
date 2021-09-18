@@ -4,40 +4,62 @@
 @Time    :   2021/09/01 01:12:30
 @Author  :   henfy
 @Diffi   :   Medium
-@Version :   1.0
+@Version :   2.0
 
 题目：https://leetcode-cn.com/problems/valid-sudoku/
 '''
 
 
 from typing import List
+import collections
 
 
 class Solution:
     def isValidSudoku(self, board: List[List[str]]) -> bool:
-        # 直接判断
-        # print(board)
-        n = len(board)
-        row = [[]*9 for _ in range(9)]
-        col = [[]*9 for _ in range(9)]
-        nine = [[]*9 for _ in range(9)]
-        for i in range(n):
-            for j in range(n):
-                tmp = board[i][j]
-                if tmp == '.':
+        # 自己参考答案来写，逐渐有思路
+        # n = len(board)
+        # row = [[]*9 for _ in range(9)]
+        # # print(row)
+        # col = [[]*9 for _ in range(9)]
+        # nine = [[]*9 for _ in range(9)]
+        # for i in range(n):
+        #     for j in range(n):
+        #         tmp = board[i][j]
+        #         if tmp != '.':
+        #             if tmp in row[i]:
+        #                 return False
+        #             if tmp in col[j]:
+        #                 return False
+        #             if tmp in nine[i//3*3+j//3]:
+        #                 return False
+        #             row[i].append(tmp)
+        #             col[j].append(tmp)
+        #             nine[i//3*3+j//3].append(tmp)
+        # return True
+        # 执行用时：44 ms, 在所有 Python3 提交中击败了60.16 % 的用户
+        # 内存消耗：15.1 MB, 在所有 Python3 提交中击败了26.70 % 的用户
+
+        # https://leetcode-cn.com/problems/valid-sudoku/solution/chi-xiao-dou-nojie-ti-python-jian-ji-min-33yd/
+        row = collections.defaultdict(set)
+        col = collections.defaultdict(set)
+        box = collections.defaultdict(set)
+
+        for i in range(len(board)):
+            for j in range(len(board[0])):
+
+                curr = board[i][j]
+                if curr == '.':
                     continue
-                # print(tmp)
-                if tmp in row[i]:
+                box_index = i//3 * 3 + j//3
+                if curr in row[i] or curr in col[j] or curr in box[box_index]:
                     return False
-                if tmp in col[j]:
-                    return False
-                if tmp in nine[(j//3)*3+i//3]:
-                    return False
-                row[i].append(tmp)
-                col[j].append(tmp)
-                nine[(j//3)*3+i//3].append(tmp)
+
+                row[i].add(curr)
+                col[j].add(curr)
+                box[box_index].add(curr)
         return True
 
+        # https://leetcode-cn.com/problems/valid-sudoku/solution/gong-shui-san-xie-yi-ti-san-jie-ha-xi-bi-ssxp/
         # 位运算解决
 
 
