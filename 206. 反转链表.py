@@ -8,7 +8,6 @@
 
 题目：https://leetcode-cn.com/problems/reverse-linked-list/
 '''
-# Definition for singly-linked list.
 
 
 class ListNode(object):
@@ -16,8 +15,9 @@ class ListNode(object):
         self.val = val
         self.next = next
 
-
 # 与206题相同
+
+
 class Solution(object):
     def reverseList(self, head: ListNode) -> ListNode:
         # 自己想，用时慢，内存小
