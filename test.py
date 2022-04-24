@@ -1,3 +1,10 @@
+st = []
+st.append(1)
+st.append(4)
+st.pop()
+st.pop()
+
+
 # hashmap = dict()
 
 # hashmap[1] = 'b'
