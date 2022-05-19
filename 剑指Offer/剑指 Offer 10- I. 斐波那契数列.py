@@ -16,33 +16,33 @@ from typing import List
 class Solution:
     def fib(self, n: int) -> int:
         # 自己写，之前做过，数组存储信息
-        # ans = [0]*(n+1)
+        # if n == 0:
+        #     return 0
+        # res = [0 for _ in range(n+1)]
+        # res[1] = 1
+        # for i in range(2, n+1):
+        #     res[i] = res[i-1]+res[i-2]
+        # # print('res', res)
+        # return res[n] % (1000000007)
+
+        # 自己写，省空间，用变量存
         # if n == 0:
         #     return 0
         # if n == 1:
         #     return 1
-        # ans[0] = 0
-        # ans[1] = 1
+        # min = 0
+        # middle = 1
         # for i in range(2, n+1):
-        #     ans[i] = ans[i-1] + ans[i-2]
-        # return ans[n] % 1000000007
-        # 执行用时：44 ms, 在所有 Python3 提交中击败了15.41 % 的用户
-        # 内存消耗：14.9 MB, 在所有 Python3 提交中击败了48.64 % 的用户
+        #     max = middle + min
+        #     min = middle
+        #     middle = max
+        # return middle % 1000000007
 
-        # 自己写，省空间，用变量存
-        if n == 0:
-            return 0
-        if n == 1:
-            return 1
-        min = 0
-        middle = 1
-        for i in range(2, n+1):
-            max = middle + min
-            min = middle
-            middle = max
-        return middle % 1000000007
-        # 执行用时：32 ms, 在所有 Python3 提交中击败了73.81 % 的用户
-        # 内存消耗：15 MB, 在所有 Python3 提交中击败了26.50 % 的用户
+        # 动态规划
+        a, b = 0, 1
+        for _ in range(n):
+            a, b = b, a + b
+        return a % 1000000007
 
         # 1. 动态规划
         # https://leetcode-cn.com/problems/fei-bo-na-qi-shu-lie-lcof/solution/fei-bo-na-qi-shu-lie-by-leetcode-solutio-hbss/
@@ -89,8 +89,10 @@ class Solution:
 if __name__ == '__main__':
     s = Solution()
     test_list = [
+        (0, 0),
         (2, 1),
         (5, 5),
+        (45, 134903163),
     ]
 
     for test_index, test_case in enumerate(test_list, start=1):

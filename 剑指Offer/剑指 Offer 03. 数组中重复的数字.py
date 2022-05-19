@@ -10,11 +10,45 @@
 '''
 
 
+from collections import defaultdict
 from typing import List
 
 
 class Solution:
     def findRepeatNumber(self, nums: List[int]) -> int:
+        # 自己写
+        # res = defaultdict(dict)
+        # for i, num in enumerate(nums):
+        #     # print(i, num)
+        #     if num not in res:
+        #         res[num] = 1
+        #     else:
+        #         return num
+
+        # 哈希表 / Set
+        # dic = set()
+        # for num in nums:
+        #     if num in dic:
+        #         return num
+        #     dic.add(num)
+        # return -1
+
+        # 原地交换
+        i = 0
+        while i < len(nums):
+            if nums[i] == i:
+                i += 1
+                continue
+            if nums[nums[i]] == nums[i]:
+                return nums[i]
+            nums[nums[i]], nums[i] = nums[i], nums[nums[i]]
+        return -1
+        '''
+        作者：jyd
+        链接：https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/solution/mian-shi-ti-03-shu-zu-zhong-zhong-fu-de-shu-zi-yua/
+        来源：力扣（LeetCode）
+        著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+        '''
 
 
 if __name__ == '__main__':
