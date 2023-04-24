@@ -1,8 +1,19 @@
-st = []
-st.append(1)
-st.append(4)
-st.pop()
-st.pop()
+import sys
+
+if __name__ == "__main__":
+    print(sys.argv)
+
+# HACK: 不确定标记
+# INFO: xinxi
+# BUG: 有bug
+# TAG: 打标签
+# XXX: 随便写
+
+# st = []
+# st.append(1)
+# st.append(4)
+# st.pop()
+# st.pop()
 
 
 # hashmap = dict()

@@ -4,32 +4,24 @@
 @Time    :   2021/07/27 22:31:43
 @Author  :   henfy
 @Diffi   :   Easy
-@Version :   1.0
-
-题目：https://leetcode-cn.com/problems/two-sum/
+@Method  :   暴力、哈希表
+@Question:   https://leetcode-cn.com/problems/two-sum/
+@Answer  :   https://leetcode.cn/problems/two-sum/solutions/434597/liang-shu-zhi-he-by-leetcode-solution/
 '''
-
 
 from typing import List
 
 
 class Solution(object):
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        # print(nums)
-        d = dict()
-        n = len(nums)
-        for i in range(n):
-            if target - nums[i] in d:
-                return [d[target - nums[i]], i]
-            d[nums[i]] = i
+        # NOTE 做过
 
         # 1.1 暴力破解
-        # https://leetcode-cn.com/problems/two-sum/solution/liang-shu-zhi-he-by-leetcode-solution/
-        # n = len(nums)
-        # for i in range(n):
-        #     for j in range(i+1, n):
-        #         if nums[i] + nums[j] == target:
-        #             return [i, j]
+        n = len(nums)
+        for i in range(n):
+            for j in range(i+1, n):
+                if nums[i] + nums[j] == target:
+                    return [i, j]
 
         # 1.2 暴力破解
         # n = len(nums)
@@ -44,12 +36,18 @@ class Solution(object):
         #     return [j, i]
 
         # 2.哈希表 数组存储索引
-        # hashmap = dict()
-        # # hashmap = {}
+        # # d = dict()
+        # d = {}
+        # n = len(nums)
+        # for i in range(n):
+        #     if target - nums[i] in d:
+        #         return [d[target - nums[i]], i]
+        #     d[nums[i]] = i
+
         # for i, num in enumerate(nums):
-        #     if target - num in hashmap:
-        #         return [hashmap[target-num], i]
-        #     hashmap[num] = i
+        #     if target - num in d:
+        #         return [d[target-num], i]
+        #     d[num] = i
 
 
 if __name__ == '__main__':
